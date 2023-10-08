@@ -1,0 +1,63 @@
+using namespace std;
+#include <iostream>
+#include <string>
+
+int hari;
+float gaji;
+
+void cektanggal(){
+    int tahun, bulan;
+    cout<<"Bulan apa: ";
+    cin>>bulan; 
+    if (bulan == 1 || bulan == 3 || bulan == 5 || bulan == 7 || bulan == 9 || bulan == 11) {
+    hari = 31;
+    } else if (bulan == 4 || bulan == 6 || bulan == 8 || bulan == 10 || bulan == 12) {
+    hari == 30;
+    }else if (bulan == 2)
+    {
+    hari == 29;
+    }
+    cout<<"Tahun?: ";
+    cin>>tahun;
+}
+
+float hitunggaji(){
+    int komisimas, komisipel1, komisipel2, komisipel3, pelangganw2, pelangganw3, pelanggan, tonicpomade, toningcoloring, casbon, tonicpomadepr, toningcoloringpr;
+
+    cout<<"Masukkan Banyak Pelanggan";
+    cin>>pelanggan;
+    cout<<"Masukkan banyak tonic/pomade";
+    cin>>tonicpomade;
+    cout<<"Masukkan Banyak toning/coloring";
+    cin>>toningcoloring;
+    cout<<"Masukkan Banyak casbon";
+    cin>>casbon;
+    komisimas = 60000;
+    komisipel1 = 6000;
+    komisipel2 = 10000;
+    komisipel3 = 15000;
+    toningcoloringpr = 15000;
+    tonicpomadepr = 6000;
+
+    pelangganw2 = pelanggan - 10;
+    pelangganw3 = pelanggan - 20;
+    do{
+    if(pelanggan>10 && pelanggan<=20){ //menggunakan return agar bisa dikembalikan nilainya ke main
+        return (komisipel2*pelangganw2) + (komisipel1*10) + (tonicpomade*tonicpomadepr) + (toningcoloring*toningcoloringpr); - casbon + komisimas;
+    }else if(pelanggan>20){
+        return (komisipel3*pelangganw3) + (komisipel2*10) + (komisipel1*10) - casbon + komisimas + (tonicpomade*tonicpomadepr) + (toningcoloring*toningcoloringpr);
+    }else if(pelanggan<=10){
+        return (komisipel1*pelanggan) - casbon + komisimas + (tonicpomade*tonicpomadepr) + (toningcoloring*toningcoloringpr);
+    }else{
+        cout << "salah";
+    } } while (pelanggan >= 10 || pelanggan >= 20 || pelanggan <= 10 && pelanggan > 0);
+    }
+
+int main(){
+    int i;
+    cektanggal();
+    for(i=1; i<=hari; i++){
+        float gaji = hitunggaji(); // Mencetak return
+        cout << "Gaji: " << gaji << endl;
+    }
+    return 0;}
