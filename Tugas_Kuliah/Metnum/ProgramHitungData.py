@@ -2,6 +2,9 @@ import pandas as pd
 
 df = pd.read_excel(r'D:\Tugas Rafi\Kuliah\Tugas\Semester 3\Statistika\M. NAUFAL RAFY GHALY_22081010295_TUGASP3PENGOLAHANDATA_STATKOME2324.xlsx', sheet_name='Sort')
 
+# MEAN, MEDIAN, MODUS, VARIANS, STD
+print("-----------MEAN, MEDIAN, MODUS-----------")
+print("\n")
 
 
 # Kolom 1
