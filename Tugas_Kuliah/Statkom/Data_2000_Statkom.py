@@ -289,7 +289,7 @@ print(f"Frekuensi Relatif Kumulatif Lebih Dari: {frekuensi_kumulatif_lebih_dari}
 print("\n")
 
 
- # GRAFIK TABEL #
+ # GRAFIK TABEL (FREKUENSI) #
 # Data frekuensi
 frekuensi_data1 = df2['Celullar Subscription'].value_counts().sort_index()
 frekuensi_data2 = df2['Internet Users(%)'].value_counts().sort_index()
@@ -307,6 +307,120 @@ values1 = frekuensi_data1.values
 values2 = frekuensi_data2.values
 values3 = frekuensi_data3.values
 values4 = frekuensi_data4.values
+
+# Membuat subplot dengan 2 baris dan 2 kolom
+plt.figure(figsize=(12, 8))
+
+plt.subplot(2, 2, 1)
+plt.bar(labels1, values1)
+plt.title('Grafik Frekuensi Cellular Subscription')
+plt.xlabel('Interval')
+plt.ylabel('Frekuensi')
+
+plt.subplot(2, 2, 2)
+plt.bar(labels2, values2)
+plt.title('Grafik Frekuensi Internet Users(%)')
+plt.xlabel('Interval')
+plt.ylabel('Frekuensi')
+
+plt.subplot(2, 2, 3)
+plt.bar(labels3, values3)
+plt.title('Grafik Frekuensi No. of Internet Users')
+plt.xlabel('Interval')
+plt.ylabel('Frekuensi')
+
+plt.subplot(2, 2, 4)
+plt.bar(labels4, values4)
+plt.title('Grafik Frekuensi Broadband Subscription')
+plt.xlabel('Interval')
+plt.ylabel('Frekuensi')
+
+plt.tight_layout()
+
+# Menampilkan subplot
+plt.show()
+
+
+# GRAFIK TABEL (FREKUENSI RELATIF) #
+# Menghitun total Data
+total_data1 = len(df2['Celullar Subscription'])
+total_data2 = len(df2['Internet Users(%)'])
+total_data3 = len(df2['No. of Internet Users'])
+total_data4 = len(df2['Broadband Subscription'])
+
+# Hitung frekuensi relatif kumulatif kurang dari
+frekuensi_relatif1 = (frekuensi_data1 / total_data1) * 100
+frekuensi_relatif2 = (frekuensi_data2 / total_data2) * 100
+frekuensi_relatif3 = (frekuensi_data3 / total_data3) * 100
+frekuensi_relatif4 = (frekuensi_data4 / total_data4) * 100
+
+# Label untuk sumbu X (misalnya, label interval)
+labels1 = frekuensi_relatif1.index
+labels2 = frekuensi_relatif2.index
+labels3 = frekuensi_relatif3.index
+labels4 = frekuensi_relatif4.index
+
+# Data untuk sumbu Y (frekuensi)
+values1 = frekuensi_relatif1.values
+values2 = frekuensi_relatif2.values
+values3 = frekuensi_relatif3.values
+values4 = frekuensi_relatif4.values
+
+# Membuat subplot dengan 2 baris dan 2 kolom
+plt.figure(figsize=(12, 8))
+
+plt.subplot(2, 2, 1)
+plt.bar(labels1, values1)
+plt.title('Grafik Frekuensi Cellular Subscription')
+plt.xlabel('Interval')
+plt.ylabel('Frekuensi')
+
+plt.subplot(2, 2, 2)
+plt.bar(labels2, values2)
+plt.title('Grafik Frekuensi Internet Users(%)')
+plt.xlabel('Interval')
+plt.ylabel('Frekuensi')
+
+plt.subplot(2, 2, 3)
+plt.bar(labels3, values3)
+plt.title('Grafik Frekuensi No. of Internet Users')
+plt.xlabel('Interval')
+plt.ylabel('Frekuensi')
+
+plt.subplot(2, 2, 4)
+plt.bar(labels4, values4)
+plt.title('Grafik Frekuensi Broadband Subscription')
+plt.xlabel('Interval')
+plt.ylabel('Frekuensi')
+
+plt.tight_layout()
+
+# Menampilkan subplot
+plt.show()
+
+# Menghitun total Data
+total_data1 = len(df2['Celullar Subscription'])
+total_data2 = len(df2['Internet Users(%)'])
+total_data3 = len(df2['No. of Internet Users'])
+total_data4 = len(df2['Broadband Subscription'])
+
+# Hitung frekuensi relatif kumulatif kurang dari
+frekuensi_relatif1 = (frekuensi_data1 / total_data1) * 100
+frekuensi_relatif2 = (frekuensi_data2 / total_data2) * 100
+frekuensi_relatif3 = (frekuensi_data3 / total_data3) * 100
+frekuensi_relatif4 = (frekuensi_data4 / total_data4) * 100
+
+# Label untuk sumbu X (misalnya, label interval)
+labels1 = frekuensi_relatif1.index
+labels2 = frekuensi_relatif2.index
+labels3 = frekuensi_relatif3.index
+labels4 = frekuensi_relatif4.index
+
+# Data untuk sumbu Y (frekuensi)
+values1 = frekuensi_relatif1.values
+values2 = frekuensi_relatif2.values
+values3 = frekuensi_relatif3.values
+values4 = frekuensi_relatif4.values
 
 # Membuat subplot dengan 2 baris dan 2 kolom
 plt.figure(figsize=(12, 8))
